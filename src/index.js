@@ -1,19 +1,20 @@
 import './style.css';
-import homePage, { createMenu } from "./home-page";
+import { createMenu, homeHeader } from "./home-page";
 import homeImage from './images/home.jpg';
-import eat from './images/eat.jpg';
-import drink from './images/drink.jpg';
-import visit from './images/visit.jpg';
+import eatImage from './images/eat.jpg';
+import drinkImage from './images/drink.jpg';
+import restaurantImage from './images/visit.jpg';
+import eat from './eat.js';
 
 const body = document.querySelector('body');
 body.style.backgroundImage = `url(${homeImage})`;
 body.style.backgroundSize = "cover";
-homePage();
+homeHeader();
 createMenu();
 
 const $eat = document.querySelector('#eat');
 $eat.addEventListener('mouseover', () => {
-    body.style.backgroundImage = `url(${eat})`;
+    body.style.backgroundImage = `url(${eatImage})`;
     body.style.backgroundSize = 'cover';
 });
 
@@ -25,7 +26,7 @@ $eat.addEventListener('mouseout', () => {
 
 const $drink = document.querySelector('#drink');
 $drink.addEventListener('mouseover', () => {
-    body.style.backgroundImage = `url(${drink})`;
+    body.style.backgroundImage = `url(${drinkImage})`;
     body.style.backgroundSize = 'cover';
 });
 
@@ -37,11 +38,15 @@ $drink.addEventListener('mouseout', () => {
 
 const $visit = document.querySelector('#visit');
 $visit.addEventListener('mouseover', () => {
-    body.style.backgroundImage = `url(${visit})`;
+    body.style.backgroundImage = `url(${restaurantImage})`;
     body.style.backgroundSize = 'cover';
 })
 
 $visit.addEventListener('mouseout', () => {
     body.style.backgroundImage = `url(${homeImage})`;
     body.style.backgroundSize = "cover";
+});
+
+$eat.addEventListener('click', () => {
+    eat();
 });

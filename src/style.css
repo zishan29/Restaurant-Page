@@ -1,24 +1,52 @@
 body {
     position: relative;
+    font-family: 'calluna';
+}
+
+@font-face {
+    font-family: 'ambroise';
+    src: url(./font/Ambroise\ Regular.otf);
+}
+
+@font-face {
+    font-family: 'calluna';
+    src: url(./font//Calluna-Regular.otf);
 }
 
 #header {
     color: white;
-    margin-top: 50px;
+    margin-top: 60px;
     display: flex;
     align-items: center;
+    font-family: 'ambroise';
 }
 
 #restaurantName {
-    font-size: 30px;
+    font-size: 20px;
     margin-right: auto;
-    margin-left: 45px;
+    margin-left: 50px;
+    letter-spacing: 6px;
 }
 
 #header > button {
     background: none;
     border: none;
     color: white;
+    font-family: 'calluna';
+}
+
+#header-black {
+    color: black;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    font-family: 'ambroise';
+}
+
+#header-black > button {
+    background: none;
+    border: none;
+    color: black;
 }
 
 img {
@@ -43,7 +71,7 @@ img {
 #menu {
     color: white;
     position: absolute;
-    top: 33vh;
+    top: 31vh;
     left: 50%;
     transform: translateX(-50%);
     display: grid;
@@ -54,12 +82,24 @@ img {
 }
 
 #eat, #drink, #visit {
-    font-size: 100px;
+    font-size: 105px;
+    font-family: 'ambroise';
+}
+
+#menu > #eat {
+    display: grid;
+    justify-self: center;
+}
+
+#menu > #visit {
+    display: grid;
+    justify-self: center;
 }
 
 #address {
     grid-column: 1 / -1;
-    font-size: 20px;
+    font-size: 23px;
+    font-style: italic;
 }
 
 #menu > button {
@@ -71,4 +111,159 @@ img {
 
 #menu > button:hover {
     border-bottom: 1px solid white;
+}
+
+
+#menu-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 150px 53vh 91.8vh;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 14.5vh;
+    transform: translateX(-50%);
+    justify-items: center;
+}
+
+#heading {
+    grid-column: 1 / -1;
+    display: grid;
+    justify-items: center;
+    gap: 53px;
+}
+
+#entrees, #dessert > #title {
+    font-size: 50px;
+    font-family: 'ambroise';
+    letter-spacing: 4px;
+}
+
+#description {
+    font-weight: bold;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'calluna';
+    letter-spacing: 0.5px;
+}
+
+#tasting-menu {
+    grid-column: 1 / -1;
+    margin-top: 60px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35px 35px 100px;
+    align-items: center;
+}
+
+#menu-image {
+    margin-top: 70px;
+    width: 88.6%;
+    height: auto;
+    position: absolute;
+    top: 106vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#footer {
+    position: absolute;
+    top: 301vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    border-top: 1px solid #e6e6e6;
+    height: 60vh;
+    width: 87vw;
+    align-content: center;
+}
+
+#left, #center, #right {
+    display: grid;
+    margin-top: 77px;
+    justify-items: center;
+    gap: 25px;
+    grid-template-rows: 50px;
+}
+
+#garden, #sea, #land {
+    font-weight: bold;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'calluna';
+    letter-spacing: 1px;
+}
+
+#container1, #container2, #container3,
+#container4, #container5, #container6,
+#container7, #container8, #container9,
+#dessert, #contact, #hours {
+    display: grid;
+    justify-items: center;
+    font-size: 15px;
+    font-family: 'calluna';
+}
+
+#dessert {
+    height: 80vh;
+    grid-column: 2 / 3;
+    gap: 55px;
+}
+
+#dessert > #container1, #dessert > #container2, #dessert > #container3,
+#dessert > #container4, #dessert > #container5 {
+    gap: 16px;
+}  
+
+#make-reservation {
+    margin-top: 40px;
+    width: 275px;
+    height: 45px;
+    background: white;
+    font-family: 'calluna';
+    border: 2px solid black;
+    letter-spacing: 5px;
+    font-weight: 550;
+    border-radius: 2px;
+}
+
+#make-reservation:hover {
+    color: white;
+    font-family: 'calluna';
+    background-color: #333333;
+    font-weight: 550;
+}
+
+#contact {
+    height: 150px;
+}
+
+#footer-center {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 1fr 1fr;
+}
+
+#footer-instagram, #footer-twitter {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+}
+
+#footer-center > div {
+    font-family: 'ambroise';
+    font-size: 50px;
+}
+
+#footer-twitter, #footer-instagram {
+    margin: 0 10px;
+    height: 28px;
+    width: auto;
+}
+
+#contact > #title, #hours > #title {
+    font-weight: bold;
+    font-style: italic;
 }
