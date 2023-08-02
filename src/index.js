@@ -1,52 +1,78 @@
 import './style.css';
 import { createMenu, homeHeader } from "./home-page";
-import homeImage from './images/home.jpg';
-import eatImage from './images/eat.jpg';
-import drinkImage from './images/drink.jpg';
-import restaurantImage from './images/visit.jpg';
 import eat from './eat.js';
+import drink from './drink.js'
+import visit from './visit.js'
 
 const body = document.querySelector('body');
-body.style.backgroundImage = `url(${homeImage})`;
-body.style.backgroundSize = "cover";
+body.classList.add('homeImage');
 homeHeader();
 createMenu();
 
+function createBlank() {
+    const content = document.querySelector('#content');
+    content.textContent = "";
+    body.classList.remove('homeImage');
+}
+
 const $eat = document.querySelector('#eat');
 $eat.addEventListener('mouseover', () => {
-    body.style.backgroundImage = `url(${eatImage})`;
-    body.style.backgroundSize = 'cover';
+    body.classList.remove('homeImage');
+    body.classList.add('eatImage');
 });
 
 $eat.addEventListener('mouseout', () => {
-    body.style.backgroundImage = `url(${homeImage})`;
-    body.style.backgroundSize = "cover";
+    setTimeout(()=> {
+        body.classList.remove('eatImage');
+        body.classList.add('homeImage');
+    }
+    ,100);
 });
 
 
 const $drink = document.querySelector('#drink');
 $drink.addEventListener('mouseover', () => {
-    body.style.backgroundImage = `url(${drinkImage})`;
-    body.style.backgroundSize = 'cover';
+    body.classList.remove('homeImage');
+    body.classList.add('drinkImage');
 });
 
 $drink.addEventListener('mouseout', () => {
-    body.style.backgroundImage = `url(${homeImage})`;
-    body.style.backgroundSize = "cover";
+    setTimeout(()=> {
+        body.classList.remove('drinkImage');
+        body.classList.add('homeImage');
+    }
+    ,100);
 });
 
 
 const $visit = document.querySelector('#visit');
 $visit.addEventListener('mouseover', () => {
-    body.style.backgroundImage = `url(${restaurantImage})`;
-    body.style.backgroundSize = 'cover';
+    body.classList.remove('homeImage');
+    body.classList.add('visitImage');
 })
 
 $visit.addEventListener('mouseout', () => {
-    body.style.backgroundImage = `url(${homeImage})`;
-    body.style.backgroundSize = "cover";
+    setTimeout(()=> {
+        body.classList.remove('visitImage');
+        body.classList.add('homeImage');
+    }
+    ,100);
 });
 
 $eat.addEventListener('click', () => {
+    body.classList.remove('eatImage');
+    createBlank();
     eat();
 });
+
+$drink.addEventListener('click', () => {
+    body.classList.remove('drinkImage');
+    createBlank();
+    drink();
+});
+
+$visit.addEventListener('click', () => {
+    body.classList.remove('visitImage');
+    createBlank();
+    visit();
+})

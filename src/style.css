@@ -13,6 +13,30 @@ body {
     src: url(./font//Calluna-Regular.otf);
 }
 
+.homeImage {
+    background-image: url(./images/home.jpg);
+    background-size: cover;
+    transition: background-image 0.5s;
+}
+
+.eatImage {
+    background-image: url(./images/eat.jpg);
+    background-size: cover;
+    transition: background-image 0.5s;
+}
+
+.drinkImage {
+    background-image: url(./images/drink.jpg);
+    background-size: cover;
+    transition: background-image 0.5s;
+}
+
+.visitImage {
+    background-image: url(./images/visit.jpg);
+    background-size: cover;
+    transition: background-image 0.5s;
+}
+
 #header {
     color: white;
     margin-top: 60px;
@@ -121,7 +145,7 @@ img {
     width: 80%;
     position: absolute;
     left: 50%;
-    top: 14.5vh;
+    top: 18vh;
     transform: translateX(-50%);
     justify-items: center;
 }
@@ -133,7 +157,7 @@ img {
     gap: 53px;
 }
 
-#entrees, #dessert > #title {
+#entrees, #dessert > #title, #libations {
     font-size: 50px;
     font-family: 'ambroise';
     letter-spacing: 4px;
@@ -162,7 +186,7 @@ img {
     width: 88.6%;
     height: auto;
     position: absolute;
-    top: 106vh;
+    top: 110vh;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -227,6 +251,7 @@ img {
     letter-spacing: 5px;
     font-weight: 550;
     border-radius: 2px;
+    grid-column: 1 / -1;
 }
 
 #make-reservation:hover {
@@ -266,4 +291,87 @@ img {
 #contact > #title, #hours > #title {
     font-weight: bold;
     font-style: italic;
+}
+
+#drink-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 150px 155vh;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 18vh;
+    transform: translateX(-50%);
+    justify-items: center;
+}
+
+#cocktails {
+    display: grid;
+    grid-column: 1 / -1;
+    justify-items: center;
+    gap: 50px;
+    height: 450px;
+}
+
+#cocktails > #title, #wine > #title, #beer > #title {
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+#drink-image {
+    margin-top: 70px;
+    width: 88.6%;
+    height: auto;
+    position: absolute;
+    top: 118vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#wine {
+    display: grid;
+    justify-items: center;
+    gap: 50px;
+    justify-self: end;
+    margin-right: 160px;
+}
+
+#beer {
+    display: grid;
+    justify-items: center;
+    gap: 25px;
+    justify-self: start;
+    margin-left: 160px;
+    grid-template-rows: 70px;
+}
+
+#cocktails > div {
+    gap: 20px;
+} 
+
+#wine > div {
+    display: grid;
+    gap: 20px;
+}
+
+#drink-content > button {
+    margin-top: 140px;
+}
+
+#visit-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 18vh;
+    transform: translateX(-50%);
+    justify-items: center;
+}
+
+#visit-content > #container2 {
+
 }

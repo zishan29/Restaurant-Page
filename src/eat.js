@@ -4,10 +4,7 @@ import instagramBlack from './images/instagram-black.svg';
 import twitterBlack from './images/twitter-black.svg';
 
 export default function eat() {
-    const body = document.querySelector('body');
     const content = document.querySelector('#content');
-    content.textContent = "";
-    body.style.backgroundImage = '';
     homeHeaderBlack();
     const menuContent = document.createElement('div');
     menuContent.setAttribute('id', 'menu-content');
@@ -324,6 +321,7 @@ export function addFooter() {
     contact.appendChild(d);
     const e = document.createElement('div');
     e.textContent = 'example@example.com';
+    e.setAttribute('id', 'mail');
     contact.appendChild(e);
 
     footer.appendChild(contact);
