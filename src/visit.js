@@ -1,4 +1,6 @@
 import { homeHeaderBlack } from "./home-page";
+import visitImage from './images/visit-page.jpeg';
+import { addFooter } from "./eat";  
 
 
 export default function visit() {
@@ -20,6 +22,9 @@ export default function visit() {
     visitContent.appendChild(header);
     content.appendChild(visitContent);
     addInfo();
+    addFooter();
+    addImage();
+    addViewMenu();
 }
 
 function addInfo() {
@@ -78,5 +83,52 @@ function addInfo() {
     container4.appendChild(m);
     visitContent.appendChild(container4);
 
+    const otherDetails = document.createElement('div');
+    otherDetails.setAttribute('id', 'other-details');
+    const container5 = document.createElement('div');
+    container5.setAttribute('id', 'container5');
+    const n = document.createElement('div');
+    n.textContent = 'Credit cards we gladly accept';
+    n.setAttribute('id', 'title');
+    container5.appendChild(n);
+    const o = document.createElement('div');
+    o.textContent = 'Fake';
+    container5.appendChild(o);
+    const p = document.createElement('div');
+    p.textContent = 'Nameless';
+    container5.appendChild(p);
+    const q = document.createElement('div');
+    q.textContent = 'Credit';
+    container5.appendChild(q);
+    otherDetails.appendChild(container5);
 
+    const container6 = document.createElement('div');
+    container6.setAttribute('id', 'container6');
+    const r = document.createElement('div');
+    r.textContent = 'Corkage fee';
+    r.setAttribute('id', 'title');
+    container6.appendChild(r);
+    const s = document.createElement('div');
+    s.textContent = '$10';
+    container6.appendChild(s);
+    otherDetails.appendChild(container6);
+    
+    visitContent.appendChild(otherDetails);
+
+}
+
+function addImage() {
+    const content = document.querySelector('#content');
+    const visitPageImage = new Image();
+    visitPageImage.setAttribute('id', 'visit-image');
+    visitPageImage.src = visitImage;
+    content.appendChild(visitPageImage);
+}
+
+function addViewMenu() {
+    const visitContent = document.querySelector('#visit-content');
+    const makeReservation = document.createElement('button');
+    makeReservation.setAttribute('id', 'view-menu');
+    makeReservation.textContent = 'VIEW ENTRÉES MENU';
+    visitContent.appendChild(makeReservation);
 }
