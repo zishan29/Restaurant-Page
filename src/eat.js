@@ -349,6 +349,7 @@ export function addFooter() {
     hours.setAttribute('id', 'hours');
     const f = document.createElement('div');
     f.textContent = 'Hours';
+    f.setAttribute('id', 'title');
     hours.appendChild(f);
     const g = document.createElement('div');
     g.textContent = 'Mon–Wed  6–11';
@@ -359,10 +360,6 @@ export function addFooter() {
     const i = document.createElement('div');
     i.textContent = 'Sun  3–10';
     hours.appendChild(i);
-    const j = document.createElement('div');
-    j.textContent = 'Make a Reservation';
-    j.setAttribute('id', 'footer-make-reservation');
-    hours.appendChild(j);
 
     footer.appendChild(hours);
 
